@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('{% static "images/img_admin.jpeg" %}'); /* Replace with your image URL */
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed;
+        }
+
+        .header {
+            background-color: rgb(2, 2, 33);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: rgb(2, 2, 33);
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(2, 2, 33);
+        }
+
+        .container {
+            
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content {
+            /* background-color: white; */
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            margin-top: 20px;
+        }
+
+        .content h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .admin-actions {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .admin-action {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .admin-action:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: rgb(73, 73, 110);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Admin Dashboard</h1>
+</div>
+
+<div class="navbar">
+    <a href="">Home</a>
+    <a href="{% url 'course' %}">Add course</a>
+    <a href="{% url 'add_stud' %}">Add Student</a>
+    <a href="{% url 'stud_details' %}">Student_details</a>
+    <a href="{% url 'teacher_details' %}">Teacher details</a>
+    <a href="{% url 'log_out' %}">Logout</a>
+</div>
+
+<div class="container">
+    <center>
+    <div class="content">
+        <h1>College University</h1>
+    </div>
+    </center>
+</div>
+
+<footer>
+    <p>&copy; 2024 Admin Dashboard | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

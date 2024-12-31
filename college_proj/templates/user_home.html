@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher's Home Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+       body {
+            font-family: Arial, sans-serif;
+            background-image: url('{% static "images/userpage.jpg" %}'); /* Replace with your image URL */
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Make the background image stay in place when scrolling */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            
+            padding: 10px 20px;
+            color: white;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px;
+        }
+        .navbar a:hover {
+            
+            border-radius: 4px;
+        }
+        .navbar i {
+            margin-right: 8px;
+        }
+        main {
+            padding: 80px;
+            text-align: center;
+            color: white;
+        }
+        footer {
+            background-color: lightcyan;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+           
+            <a href="{% url 'card' %}" class="profile-link">
+                <i class="fas fa-user-circle"></i> Profile
+            </a>
+
+            
+            <a href="{% url 'edit_teacher' %}" class="edit-link">
+                <i class="fas fa-edit"></i> Edit Profile
+            </a>
+            
+            <a href="{% url 'log_out' %}" class="logout-link">
+                <i class="fas fa-logout"></i> Logout
+            </a>
+        </div>
+    </header>
+
+    
+    <main>
+        <h1>Welcome  {{user.username}}</h1>
+        <p>This is your home page where you can manage your classes, profile, and more.</p>
+        
+    </main>
+
+    
+    <footer>
+        <p>&copy; 2024 School Management System</p>
+    </footer>
+
+   
+</body>
+</html>
